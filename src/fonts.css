@@ -1,0 +1,27 @@
+@font-face {
+    font-family: kc;
+    src: url(../Fonts/kenyan-coffee-rg.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: kc;
+    src: url(../Fonts/kenyan-coffee-bd.ttf);
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: kl;
+    src: url(../Fonts/kimberley-bl.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: lm;
+    src: url(../Fonts/LEMONMILK-Bold.otf);
+    font-weight: bold;
+    font-style: normal;
+}
