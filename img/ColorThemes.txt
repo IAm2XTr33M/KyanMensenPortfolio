@@ -1,0 +1,54 @@
+purple
+
+    --Menu-D:#281D40;
+    --Menu-L:#392859;
+    --Menu-Out-F:#1C152D;
+    --Menu-Out-H:#281D40;
+    --Menu-Out-S:#33234D;
+    --Menu-Text:#ffffffed;
+
+    --Text:#ffffff;
+    --Text-Shadow:#000000;
+
+    --BG-D:#3D2D60;
+    --BG-L:#4C3777;
+    --BG-S:#00000020;
+
+    --HeaderText:#ffffff;
+
+red thing
+
+  --Menu-D:#05050d;
+  --Menu-L:#280518;
+  --Menu-Out-F:#030308;
+  --Menu-Out-H:#110D18;
+  --Menu-Out-S:#280518;
+  --Menu-Text:#ffffffed;
+
+  --Text:#ffffff;
+  --Text-Shadow:#000000;
+
+  --BG-D:#3D2D60;
+  --BG-L:#4C3777;
+  --BG-S:#00000020;
+
+  --HeaderText:#ffffff;
+
+
+main
+
+    --Menu-D:#3A2458;
+    --Menu-L:#6F3D79;
+    --Menu-Out-F:#FAC82D;
+    --Menu-Out-H:#FB9373;
+    --Menu-Out-S:#3790CF;
+    --Menu-Text:#ffffffed;
+
+    --Text:#ffffff;
+    --Text-Shadow:#000000;
+
+    --BG-D:#3D2D60;
+    --BG-L:#4C3777;
+    --BG-S:#00000020;
+
+    --HeaderText:#ffffff;
