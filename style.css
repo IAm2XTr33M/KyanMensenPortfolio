@@ -785,17 +785,35 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.scrollBar {
+  background-color: #eee;
+  width: 200px;
+  height: 100px;
+  border: 1px dotted black;
+  overflow-y: scroll;
+}
+
+.scrollBar::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollBar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 :root {
-  --Menu-D:#393939;
-  --Menu-L:#68203B;
-  --Menu-Out-F:#592157;
+  --Menu-D:#000000;
+  --Menu-L:#393939;
+  --Menu-Out-F:#163462;
   --Menu-Out-H:#382968;
-  --Menu-Out-S:#163462;
-  --Menu-Text:#ffffffed;
+  /*163462*/
+  --Menu-Out-S:#68203B;
+  --Menu-Text:#ffffff;
   --Text:#ffffff;
   --Text-Shadow:#000000;
   --BG-D:#68203B;
-  --BG-L:#163462;
+  --BG-L:#592157;
   --BG-S:#00000020;
   --HeaderText:#ffffff;
 }
@@ -876,7 +894,7 @@ video {
 }
 
 .headerName:hover{
-  margin-top: 1.5vh;
+  margin-top: 2vh;
   transition: filter 10ms;
   transition: margin 200ms;
   filter: sepia(100%) saturate(500%) brightness(90%) hue-rotate(var(--Hue));
