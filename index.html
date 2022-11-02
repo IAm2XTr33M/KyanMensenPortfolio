@@ -7,11 +7,12 @@
     <title>Portfolio Kyan Mensen</title>
     <link rel="stylesheet" href="src/fonts.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="/img/FaviCon.png">
-    <script src="js\myscripts.js"></script></a>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="js\myscripts.js"></script>
 </head>
 
-<body onload="start()"  class="m-0 text-cl overflow-x-hidden scrollBar">
+<body class="m-0 text-cl overflow-x-hidden scrollBar" style="background-color: #060606;">
     <div class="ml-[24px]">
         <a name="HomePage"></a> 
         <div id="homeDiv" class="w-[100vw] min-h-[100vh] m-0 background-Header grid place-content-center ">
@@ -30,39 +31,176 @@
                 <div class="absolute left-[79.5vw]"><img src="img/Name/N.png" class="w-[12.5vw] headerName" style="--Hue: 144deg;"></div>
             </div>
             <div class="grid place-content-center mt-auto">
-                <h2 class="font-lm-bold text-[3vw] swing-in-bottom-bck text-[#3e3e3e]" 
+                <h2 class="font-lm-bold text-[3vw] swing-in-bottom-bck text-[#dfdfdf]" 
                     style="text-shadow: 2px 2px 2px #353535;">
                     --PortFolio--
                 </h2>
             </div>
-            
         </div>
 
         <div id="aboutDiv"  class="w-[100vw] min-h-[100vh] m-0 background-About grid place-content-center">
             <a name="AboutPage"></a> 
-            <div class="w-[90vw] h-[1vh] bg-D rounded-[2vw]"></div>
-            <div class="w-[80vw] h-[90vh]"></div>
+            <div class="w-[90vw] h-[1vh] gradient-left rounded-[5px]  ml-[5%]"></div>
+            <p class="text-center xl text-cl text-[5vh] m-3 font-lm-bold">About Me</p>
+
+            <div class="w-[100vw] h-[90vh] flex" >
+                <div class="aboutImg">
+                    <div style="width:100%;height:100%;">
+                        <img src="img\Selfie.png" class="aboutimage" alt="">
+                    </div>
+                </div>
+                <div class="aboutDiv">
+                    <h2 class="font-lm-bold aboutText" style="font-size: 250%;">-Kyan Mensen-</h2>
+                    <h2 class="font-lm-bold aboutText">-Software Dev-</h2>
+                    <h2 class="font-lm-bold aboutText">-19/08/2004-</h2>
+                    <br>
+                    <p class="font-lm-bold">Hello, I am a dutch software developer who's <br>
+                    quite skilled in C# , JS and loves to learn more. <br>
+                    I love creating games and webpages. <br><br>
+                    I became a software developer to express my creativity in code. <br><br><br>
+                    I love games and anime. <br><br><br>
+                    I work in C#, JS, HTML and python</p>
+                </div>
+            </div>
+            <div class="w-[90vw] h-[1vh] gradient-right rounded-[2vw] ml-[5%]"></div>
         </div>
 
-        <div id="projectsDiv"  class="w-[100vw] min-h-[150vh] background-Projects">
+        <div class="w-[100vw] p-[5vh] background-Projects grid place-content-center" id="projectsDiv">
             <a name="ProjectsPage"></a> 
-            <p class="text-center xl text-cl">Projects</p>
+            <p class="text-center xl text-cl text-[5vh] m-3 font-lm-bold">Projects</p>
+            <div class="w-[80vw] h-[100%] grid grid-cols-3 place-content-center " style="visibility: hidden;" id="ProjectsDiv">
+
+                <!-- Dont change -->
+                <div class="mt-[3vh] projectContainer hidden" id="ProjectTemplate" onclick="ExpandProject(id)">
+                    <p></p>
+                    <div class="projectImageContainer">
+                        <img src='img\Projects\City1.png'>
+                        <div class="projectTitleContainer">
+                            <P class="text-center text-[200%] projectText font-lm">This is my title</P>    
+                        </div>
+                    </div>
+                    <div class="text-center hidden ProjectInfo" id="projectExpanded">
+                        <p class="ProjectDescription font-lm">this is a long description</p>
+                        <p class="h-[2.5vw] text-[1vw] font-lm">this is what i learned</p>
+                        <img src="img\Projects\City1.png" alt="">
+                        <a class="h-[2vh] text-[0.8vw] projectLink font-lm" target="_blank" href="">this is a link</a>
+
+                    </div> 
+                </div>
+                
+            </div>
+
+            <div class="w-[80vw] grid grid-cols-3 place-content-center slide-in-blurred-left ShowLess"id="ProjectsDiv2">
+            </div>
+
+            <br><br>
+
+            <div class="grid place-content-center" >
+                <button id="ExpandButton" onclick="ClickedButton()" 
+                    class="expandButton font-lm-bold font-[2vwx]">
+                    See all projects.
+                </button>
+            </div>
         </div>
 
-        <div id="socialDiv"  class="w-[100vw] h-[50vh] m-0  bg-L">
-            <a class="scroll-mt-[25vh]" name="SocialPage"></a> 
-            <p class="text-center xl text-cl">Socials</p>
+        <div id="socialDiv"  class="w-[100vw] h-[50vh] m-0  background-Social ">
+            <div class="grid place-content-center w-[100vw]">
+                <div class="w-[90vw] h-[1vh] gradient-left rounded-[2vw] "></div>
+                <a class="scroll-mt-[25vh]" name="SocialPage"></a> 
+                <p class="text-center xl text-cl text-[5vh] m-3 font-lm-bold">Socials</p>
+
+                <div class="w-[80vw] h-[38vh] ml-[5vw] grid grid-cols-2 place-content-center">
+
+                    <a href="https://github.com/IAm2XTr33M" target="_blank">
+                        <button class="SocialButtonDiv" href="https://github.com/IAm2XTr33M">
+                            <div style="background-color: rgb(0, 21, 48); width:25%; height: 100%;">
+                                <img src="img\socials\gitHub.png" class="socialButtonImg">
+                            </div>
+                            <div style="background-color: rgb(0, 8, 18); width:75%; height: 100%; ">
+                                <p class="socialButtonText font-lm-bold">
+                                    GitHub
+                                </p>
+                            </div>
+                        </button>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/kyan-mensen-598263253/" target="_blank">
+                        <button class="SocialButtonDiv">
+                            <div style="background-color: rgb(0, 128, 255); width:25%; height: 100%;">
+                            <img src="img\socials\LinkedIn.png" class="socialButtonImg">
+                            </div>
+                            <div style="background-color: rgb(0, 52, 105); width:75%; height: 100%; ">
+                                <p class="socialButtonText font-lm-bold">
+                                    LinkedIn
+                                </p>
+                            </div>
+                        </button>
+                    </a>
+
+                    <a href="https://www.youtube.com/channel/UCaQa73AI2zMC8Iw4I7ae1Cg" target="_blank">
+                        <button class="SocialButtonDiv">
+                            <div style="background-color: rgb(255, 0, 0); width:25%; height: 100%;">      
+                                <img src="img\socials\youtube.png" class="socialButtonImg">
+                            </div>
+                            <div style="background-color: rgb(98, 0, 0); width:75%; height: 100%; ">
+                                <p class="socialButtonText font-lm-bold">
+                                    Youtube
+                                </p>
+                            </div>
+                        </button>
+                    </a>
+
+                    <a href="https://www.twitch.tv/2xtr33m" target="_blank">
+                        <button class="SocialButtonDiv">
+                            <div style="background-color: rgb(128, 0, 255); width:25%; height: 100%;">
+                                <img src="img\socials\twitch.png" class="socialButtonImg">
+                            </div>
+                            <div style="background-color: rgb(75, 29, 121); width:75%; height: 100%; ">
+                                <p class="socialButtonText font-lm-bold">
+                                    Twitch
+                                </p>
+                            </div>
+                        </button>
+                    </a>
+
+                </div>
+            </div>
         </div>
 
-        <div id="contactDiv"  class="w-[100vw] h-[100vh] bg-D">
+        <div id="contactDiv"  class="w-[100vw] h-[100vh] background-Contact ">
+            <div class="grid place-content-center w-[100vw]">
+                <div class="w-[90vw] h-[1vh] gradient-right rounded-[2vw] "></div>
+            </div>
             <a name="ContactPage"></a> 
-            <p class="text-center xl text-cl">Contact</p>
+
+            <div class="ContactDiv">
+                <div class="contactFormDiv">
+                    <form action="https://formsubmit.co/11e1ff479e4f6068dc6913aaa3aa8756" method="POST">
+                        <h2 class="font-lm-bold contactText">Get In Contact.</h2>
+                        <input class="contentInput" type="text" name="name" placeholder="Your Name" required>
+                        <br>
+                        <input class="contentInput" type="email" name="email" placeholder="Your Email" required>
+                        <br>
+                        <input class="contentInput" type="text" name="phone" placeholder="Your Phone Number" required>
+                        <br>
+                        <p class="font-lm" style="color: rgba(255, 255, 255, 0.222); line-height: 50%; font-size: 75%;">Your Email and Phone number will stay private!</p>
+                        <textarea class="contactTextField" placeholder="Your message" name="message" rows="4"></textarea>
+                        <input type="text" name="_honey" style="display:none">
+                        <input type="hidden" name="_captcha" value="false">
+                        <br>
+                        <button class="contactButton"type="submit">Send</button>
+                    </form>     
+                </div>
+            </div>
+
+
+
         </div>
     </div>
 
     <div class="h-screen fixed top-0 left-0">
         <div class="w-12 h-[10vh] menu-D drop-shadow-menuShadow" >
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
                 <div class="w-12 h-[5vh] content-center"> 
                     <div class="w-8 h-[0.5vh] menu-L fixed left-2 top-[0.875vh]"></div>
                     <div class="w-8 h-[0.5vh] menu-L fixed left-2 top-[2.25vh]"></div>
@@ -70,55 +208,61 @@
                 </div>
             </a>
         </div>
-
-
         
         <a href="#HomePage" class="drop-shadow-menuShadow "><div class="w-12 h-[16vh] menu-item-block text-center target">
             <div class="menu-L w-12 h-[16vh] fixed small-expand" id="HomeID"></div>
-            <div class="menu-L w-12 h-[10.8vh] fixed half-expand"></div>
-            <div class="menu-L w-12 h-[5.4vh] fixed full-expand">
-                <p class="text-center m-auto menu-text menu-t text-[mb] text-upright font-lm-bold">HOME</p>
+            <div class="menu-L w-12 h-[10.8vh] fixed half-expand" id="HomeID2"></div>
+            <div class="menu-L w-12 h-[5.4vh] fixed full-expand" id="HomeID3">
+                <p class="text-center m-auto text-[1.8vh] text-upright font-lm-bold">HOME</p>
             </div>
             <div class="menu-L fixed w-6 h-[16vh] menu-shadow-block"></div>
         </div></a>
 
-        <a href="#AboutPage" class="drop-shadow-menuShadow"><div class="w-12 h-[16vh] menu-item-block text-center target">
-            <div class="menu-D w-12 h-[16vh] fixed small-expand " id="AboutId"></div>
-            <div class="menu-D w-12 h-[10.8vh] fixed half-expand"></div>
-            <div class="menu-D w-12 h-[5.4vh] fixed full-expand">
-                <p class="text-center m-auto menu-text menu-t text-[mb] text-upright font-lm-bold">ABOUT</p>
+        <a href="#AboutPage" class="drop-shadow-menuShadow"><div class="w-12 h-[15vh] menu-item-block text-center target">
+            <div class="menu-D w-12 h-[15vh] fixed small-expand " id="AboutId"></div>
+            <div class="menu-D w-12 h-[10vh] fixed half-expand" id="AboutId2"></div>
+            <div class="menu-D w-12 h-[5vh] fixed full-expand" id="AboutId3">
+                <p class="text-center m-auto text-[1.8vh] mt-[-0.40vh] text-upright font-lm-bold">ABOUT</p>
             </div>
-            <div class="menu-D fixed w-6 h-[16vh] menu-shadow-block"></div>
+            <div class="menu-D fixed w-6 h-[15vh] menu-shadow-block"></div>
         </div></a>
 
-        <a href="#ProjectsPage" class="drop-shadow-menuShadow"><div class="w-12 h-[16vh] menu-item-block text-center target">
-            <div class="menu-L w-12 h-[16vh] fixed small-expand" id="ProjectsId"></div>
-            <div class="menu-L w-12 h-[10.8vh] fixed half-expand"></div>
-            <div class="menu-L w-12 h-[5.4vh] fixed full-expand">
-                <p class="text-center m-auto menu-text menu-t text-[mb] text-upright font-lm-bold">PROJECTS</p>
+        <a href="#ProjectsPage" class="drop-shadow-menuShadow"><div class="w-12 h-[18vh] menu-item-block text-center target">
+            <div class="menu-L w-12 h-[18vh] fixed small-expand" id="ProjectsId"></div>
+            <div class="menu-L w-12 h-[12vh] fixed half-expand" id="ProjectsId2"></div>
+            <div class="menu-L w-12 h-[6vh] fixed full-expand" id="ProjectsId3">
+                <p class="tracking-tighter text-center m-auto text-[1.8vh] mt-[0.75vh] text-upright font-lm-bold longtext">PROJECTS</p>
             </div>
-            <div class="menu-L fixed w-6 h-[16vh] menu-shadow-block"></div>
+            <div class="menu-L fixed w-6 h-[18vh] menu-shadow-block"></div>
         </div></a>
 
-        <a href="#SocialPage" class="drop-shadow-menuShadow"><div class="w-12 h-[16vh] menu-item-block text-center target">
-            <div class="menu-D w-12 h-[16vh] fixed small-expand" id="SocialId"></div>
-            <div class="menu-D w-12 h-[10.8vh] fixed half-expand"></div>
-            <div class="menu-D w-12 h-[5.4vh] fixed full-expand">
-                <p class="text-center m-auto menu-text menu-t text-[mb] text-upright font-lm-bold">SOCIAL</p>
+        <a href="#SocialPage" class="drop-shadow-menuShadow"><div class="w-12 h-[15vh] menu-item-block text-center target">
+            <div class="menu-D w-12 h-[15vh] fixed small-expand" id="SocialId"></div>
+            <div class="menu-D w-12 h-[10vh] fixed half-expand" id="SocialId2"></div>
+            <div class="menu-D w-12 h-[5vh] fixed full-expand" id="SocialId3">
+                <p class="text-center m-auto text-[1.8vh] mt-[-0.40vh] text-upright font-lm-bold">SOCIAL</p>
             </div>
-            <div class="menu-D fixed w-6 h-[16vh] menu-shadow-block"></div>
+            <div class="menu-D fixed w-6 h-[15vh] menu-shadow-block"></div>
         </div></a>
 
         <a href="#ContactPage" class="drop-shadow-menuShadow"><div class="w-12 h-[16vh] menu-item-block text-center target">
             <div class="menu-L w-12 h-[16vh] fixed small-expand" id="ContactId"></div>
-            <div class="menu-L w-12 h-[10.8vh] fixed half-expand"></div>
-            <div class="menu-L w-12 h-[5.4vh] fixed full-expand">
-                <p class="text-center m-auto menu-text menu-t text-[mb] text-upright font-lm-bold">CONTACT</p>
+            <div class="menu-L w-12 h-[10.8vh] fixed half-expand" id="ContactId2"></div>
+            <div class="menu-L w-12 h-[5.4vh] fixed full-expand" id="ContactId3">
+                <p class="text-center m-auto text-[1.8vh] text-upright font-lm-bold longtext">CONTACT</p>
             </div>
             <div class="menu-L fixed w-6 h-[16vh] menu-shadow-block"></div>
         </div></a>
 
-        <div class="w-12 h-[10vh] menu-D drop-shadow-menuShadow"></div>
+        <div class="w-12 h-[10vh] menu-D drop-shadow-menuShadow">
+            <a href="index.html">
+                <img class="flag" src="img/engflag.jpg" >
+            </a> 
+            <a href="nl.html">
+                <img class="flag dark" src="img/nlflag.png">
+            </a>
+        </div>
     </div>
+
 </body>
 </html>

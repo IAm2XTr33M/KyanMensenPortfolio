@@ -5,7 +5,7 @@ module.exports = {
   ],
   theme: {
     fontSize:{
-      'mb': ['1vh'],
+      'mb': ['0.5vh'],
     },
     dropShadow:{
       'menuShadow': '0 0px 15px rgba(0,0,0,0.6)',
