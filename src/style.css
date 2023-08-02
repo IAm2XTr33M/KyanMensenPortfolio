@@ -297,7 +297,8 @@ background-color: var(--Menu-Out-F);
 }
 
 .aboutimage{
-  width:100%;
+  scale:70%;
+  width:80%;
   height:100%;
   box-shadow: 11px 11px 3px 3px var(--BG-D), -11px -11px 3px 3px var(--BG-L), 0px 0px 0px 3px #000000, -11px -11px 0px 7px #000000, 11px 11px 0px 7px #000000, 11px 11px 0px 7px #000000;
 }
